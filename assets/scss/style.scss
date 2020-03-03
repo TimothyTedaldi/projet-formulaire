@@ -47,18 +47,21 @@ body{
         h4{
             color: $firstcolor;
         }
-    }
-    .slider{ 
-        .carousel-indicators{
-            background-color: $thirdcolor;
-        }
         .TTdetails{
+            width: 100%;
+            height: 15%;
             background-color: $firstcolor !important;
             color: $secondcolor !important;
             &:hover{
                 background-color: $thirdcolor !important;
             }
         }
+    }
+    .slider{ 
+        .carousel-indicators{
+            background-color: $thirdcolor;
+        }
+       
     }
     #TTcookie-alert{
         position: relative;        
@@ -86,6 +89,23 @@ body{
             background-color: rgba(128, 128, 255, 0.329);
         }
     }
+    .footer-bg{
+        background-color: $thirdcolor;
+        background-size: cover;
+        color: $secondcolor;
+        a{
+            color: $firstcolor;
+            &:hover{
+                color: $firstcolor;
+            }
+        }
+        .my-font-awesome{
+            color: white;
+          }
+          .my-font-awesome :hover{
+            color: $firstcolor;
+          }
+    }
 }
 .TTheading{
     padding-left: 2%;
@@ -94,3 +114,69 @@ body{
     background-color: $thirdcolor;
     color: $firstcolor;
 }
+
+
+
+
+
+
+
+
+
+
+
+#fade {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1001;
+    -moz-opacity: 0.8;
+    opacity: .80;
+    filter: alpha(opacity=80);
+  }
+  
+  #light {
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    max-width: 900px;
+    max-height: 500px;
+    background: #FFF;
+    z-index: 1002;
+    overflow: visible;
+  }
+  
+  #boxclose {
+ 
+    color: #fff;
+    border: 1px solid #AEAEAE;
+    border-radius: 3px;
+    background: #222222;
+    font-size: 31px;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 0px;
+    padding: 11px 3px;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    z-index: 1002;
+    opacity: 0.9;
+  }
+  
+  .boxclose:before {
+    content: "×";
+  }
+  
+  #fade:hover ~ #boxclose {
+    display:none;
+  }
+  
+  .test:hover ~ .test2 {
+    display: none;
+  }
