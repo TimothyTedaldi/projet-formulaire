@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="Description" content="A Website made by Timothy Tedaldi & Christine Sautelet">
 
+        <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.css"> <!-- Need it for cookie alert -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -56,30 +57,46 @@
 
         <div class="jumbotron jumbotron-fluid">
             <div class="container ">
-              <h1 class="ml-5">The Raspberry Pi is deceptively simple.</h1>
+              <h1 class="display-4 ml-5">The Raspberry Pi is deceptively simple.</h1>
               <p class="ml-5">Plug it in, boot it up, and use it as a personal computer, or attach a million gizmos and modules and invent something new and amazing!</p>
               <p class="ml-5">Quite simple isn't it ? Still you'll need the best components to unleash your creativity.</p>
               <p class="ml-5">And what else than Hackers Poulette to find them !</p>
             </div>
         </div>
 
+        
+        <h2 class="display-4 TTheading">
+          Product of the month : Raspberry Pi 4
+        </h2>
+        <div class="container-fluid my-5 row TTmonth-product">
+          <h3 class="col-12 text-center"> Completely upgraded, re-engineered </h3>
+          <h3 class="col-12 text-center"> Faster, more powerful </h3>
+          <div class="col-0 col-lg-1"></div>
+          <img class="col-12 col-lg-5" src="/assets/img/raspberry.PNG">
+          <div class="col-12 col-lg-5 mt-4 ml-md-3">
+              <h4 class="font-weight-bold"> From 35 $ </h4>
+              <p class="h5 my-5">You'll recognise the price along with the basic shape and size, so you can simply drop your new Raspberry Pi into your old projects for an upgrade;</p>
+              <p class="h5"> And as always, we've kept all our software backwards-compatible, so what you create on a Raspberry Pi 4 will work on any older models you own too.</p>
+          </div>
+          <div class="col-0 col-lg-1"></div>
+        </div>
         <!-- SLIDER-->
-
-        <div class="container-fluid">
+        <h2 class="display-4 TTheading">Our Raspberry Pi Boards</h2>
+        <div class="container-fluid slider">
           <!--Carousel Wrapper-->
           <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
       
             <!--Controls-->
             
               <div class="controls-top">
-                <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-circle-left"></i></a>
-                <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fas fa-chevron-circle-right"></i></a>
+                <a class="btn-floating" href="#multi-item-example" data-slide="prev"></a>
+                <a class="btn-floating" href="#multi-item-example" data-slide="next"></a>
               </div>
               <!--Indicators-->
               <ol class="carousel-indicators my-auto">
-                <li data-target="#multi-item-example" data-slide-to="0" class="active TTindic"></li>
-                <li data-target="#multi-item-example" data-slide-to="1" class="TTindic"></li>
-                <li data-target="#multi-item-example" data-slide-to="2" class="TTindic"></li>
+                <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+                <li data-target="#multi-item-example" data-slide-to="1"></li>
+                <li data-target="#multi-item-example" data-slide-to="2"></li>
               </ol>
               <!--/.Indicators-->
             <!--/.Controls-->
@@ -93,39 +110,39 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="card mb-2">
-                      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
+                      <img class="card-img-top" id="TTimg1"  src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
                         alt="Card image cap">
                       <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        <h4 class="card-title" id="TTtitle1">Card title</h4>
+                        <p class="card-text" id="TTdescription1">Some quick example text to build on the card title and make up the bulk of the
                           card's content.</p>
-                        <a class="btn btn-primary">Button</a>
+                        <a class="btn btn-primary TTdetails">More Details</a>
                       </div>
                     </div>
                   </div>
       
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                      <img class="card-img-top" id="TTimg2" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
                         alt="Card image cap">
                       <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        <h4 class="card-title" id="TTtitle2">Card title</h4>
+                        <p class="card-text" id="TTdescription2">Some quick example text to build on the card title and make up the bulk of the
                           card's content.</p>
-                        <a class="btn btn-primary">Button</a>
+                        <a class="btn btn-primary TTdetails">More Details</a>
                       </div>
                     </div>
                   </div>
       
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
+                      <img class="card-img-top" id="TTimg3" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
                         alt="Card image cap">
                       <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        <h4 class="card-title" id="TTtitle3">Card title</h4>
+                        <p class="card-text" id="TTdescription3">Some quick example text to build on the card title and make up the bulk of the
                           card's content.</p>
-                        <a class="btn btn-primary">Button</a>
+                        <a class="btn btn-primary TTdetails">More Details</a>
                       </div>
                     </div>
                   </div>
@@ -140,39 +157,39 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="card mb-2">
-                      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
+                      <img class="card-img-top" id="TTimg4" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
                         alt="Card image cap">
                       <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        <h4 class="card-title" id="TTtitle4">Card title</h4>
+                        <p class="card-text" id="TTdescription4">Some quick example text to build on the card title and make up the bulk of the
                           card's content.</p>
-                        <a class="btn btn-primary">Button</a>
+                        <a class="btn btn-primary TTdetails">More Details</a>
                       </div>
                     </div>
                   </div>
       
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
+                      <img class="card-img-top" id="TTimg5" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
                         alt="Card image cap">
                       <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        <h4 class="card-title" id="TTtitle5">Card title</h4>
+                        <p class="card-text" id="TTdescription5">Some quick example text to build on the card title and make up the bulk of the
                           card's content.</p>
-                        <a class="btn btn-primary">Button</a>
+                        <a class="btn btn-primary TTdetails">More Details</a>
                       </div>
                     </div>
                   </div>
       
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
+                      <img class="card-img-top" id="TTimg6" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
                         alt="Card image cap">
                       <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        <h4 class="card-title" id="TTtitle6">Card title</h4>
+                        <p class="card-text" id="TTdescription6">Some quick example text to build on the card title and make up the bulk of the
                           card's content.</p>
-                        <a class="btn btn-primary">Button</a>
+                        <a class="btn btn-primary TTdetails">More Details</a>
                       </div>
                     </div>
                   </div>
@@ -187,39 +204,39 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="card mb-2">
-                      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg"
+                      <img class="card-img-top" id="TTimg7" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg"
                         alt="Card image cap">
                       <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        <h4 class="card-title" id="TTtitle7">Card title</h4>
+                        <p class="card-text" id="TTdescription7">Some quick example text to build on the card title and make up the bulk of the
                           card's content.</p>
-                        <a class="btn btn-primary">Button</a>
+                        <a class="btn btn-primary TTdetails">More Details</a>
                       </div>
                     </div>
                   </div>
       
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"
+                      <img class="card-img-top" id="TTimg8" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"
                         alt="Card image cap">
                       <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        <h4 class="card-title" id="TTtitle8">Card title</h4>
+                        <p class="card-text" id="TTdescription8">Some quick example text to build on the card title and make up the bulk of the
                           card's content.</p>
-                        <a class="btn btn-primary">Button</a>
+                        <a class="btn btn-primary TTdetails">More Details</a>
                       </div>
                     </div>
                   </div>
       
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg"
+                      <img class="card-img-top" id="TTimg9" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg"
                         alt="Card image cap">
                       <div class="card-body">
-                        <h4 class="card-title">Card title</h4>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        <h4 class="card-title" id="TTtitle9">Card title</h4>
+                        <p class="card-text" id="TTdescription9">Some quick example text to build on the card title and make up the bulk of the
                           card's content.</p>
-                        <a class="btn btn-primary">Button</a>
+                        <a class="btn btn-primary TTdetails">More Details</a>
                       </div>
                     </div>
                   </div>
@@ -238,9 +255,11 @@
 
         <!-- SCRIPT HERE -->
         <script src="js/backToTop.js"></script>
+        <script src="js/goFetchMyImages.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js"></script>
-    </body>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </body>
 </html>

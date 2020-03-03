@@ -33,7 +33,7 @@ body{
         }
     }
     .jumbotron{
-        padding-bottom: 20%;
+        padding-bottom: 25%;
         background-image: url(../img/backgroundJumbo.jpg);
         background-size: cover;
         background-position: center;
@@ -41,6 +41,23 @@ body{
             color: white;
             background-color: #30303080;
             border-radius: 3%;
+        }
+    }
+    .TTmonth-product{
+        h4{
+            color: $firstcolor;
+        }
+    }
+    .slider{ 
+        .carousel-indicators{
+            background-color: $thirdcolor;
+        }
+        .TTdetails{
+            background-color: $firstcolor !important;
+            color: $secondcolor !important;
+            &:hover{
+                background-color: $thirdcolor !important;
+            }
         }
     }
     #TTcookie-alert{
@@ -70,7 +87,10 @@ body{
         }
     }
 }
-
-.carousel-indicators{
-    background-color: $firstcolor;
+.TTheading{
+    padding-left: 2%;
+    margin-left: 0%;
+    margin-right: 0%;
+    background-color: $thirdcolor;
+    color: $firstcolor;
 }
