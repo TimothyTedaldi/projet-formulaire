@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="Description" content="A Website made by Timothy Tedaldi & Christine Sautelet">
 
@@ -57,7 +57,7 @@
               </nav>
         </header>
 
-        <!-- SLIDER-->
+        <!-- FORM-->
 
         <div class="container-fluid">
             <div class="starter-template">
@@ -75,14 +75,14 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="radio" name="gender" value="woman" class="radio-inline">Woman
-                      <input type="radio" name="gender" value="man" class="radio-inline">Man
+                      <input type="radio" name="gender" value="mrs" class="radio-inline"<?= $_SESSION['inputs']['gender']=='mrs' ? 'checked' : ''; ?>>Mrs
+                      <input type="radio" name="gender" value="mr" class="radio-inline"<?= $_SESSION['inputs']['gender']=='mr' ? 'checked' : ''; ?>>Mr
                     </div>
                   </div>
                   <div class="col-md-8">
                     <div class="form-group">
                       <select name="countries" id="inputcountries" size="1" class="form-control">
-                        <option selected>Select a Country</option>
+                        <option selected><?= isset($_SESSION['inputs']['countries']) ? $_SESSION['inputs']['countries'] : 'Select a country'; ?></option>
                         <?php
                           $countries=['Afrique du Sud','Afghanistan','Albanie','Algérie','Allemagne','Andorre','Angola','Antigua-et-Barbuda','Arabie Saoudite','Argentine','Arménie','Australie','Autriche','Azerbaïdjan','Bahamas','Bahreïn','Bangladesh','Barbade','Belgique','Belize','Bénin','Bhoutan','Biélorussie','Birmanie','Bolivie','Bosnie-Herzégovine','Botswana','Brésil','Brunei','Bulgarie','Burkina Faso','Burundi','Cambodge','Cameroun','Canada','Cap-Vert','Chili','Chine','Chypre','Colombie','Comores','Corée du Nord','Corée du Sud','Costa Rica','Côte d\'Ivoire','Croatie','Cuba','Danemark','Djibouti','Dominique','Égypte','Émirats arabes unis','Équateur','Érythrée','Espagne','Eswatini','Estonie','États-Unis','Éthiopie','Fidji','Finlande','France','Gabon','Gambie','Géorgie','Ghana','Grèce','Grenade','Guatemala','Guinée','Guinée équatoriale','Guinée-Bissau','Guyana','Haïti','Honduras','Hongrie','Îles Cook','Îles Marshall','Inde','Indonésie','Irak','Iran','Irlande','Islande','Israël','Italie','Jamaïque','Japon','Jordanie','Kazakhstan','Kenya','Kirghizistan','Kiribati','Koweït','Laos','Lesotho','Lettonie','Liban','Liberia','Libye','Liechtenstein','Lituanie','Luxembourg','Macédoine','Madagascar','Malaisie','Malawi','Maldives','Mali','Malte','Maroc','Maurice','Mauritanie','Mexique','Micronésie','Moldavie','Monaco','Mongolie','Monténégro','Mozambique','Namibie','Nauru','Népal','Nicaragua','Niger','Nigeria','Niue','Norvège','Nouvelle-Zélande','Oman','Ouganda','Ouzbékistan','Pakistan','Palaos','Palestine','Panama','Papouasie-Nouvelle-Guinée','Paraguay','Pays-Bas','Pérou','Philippines','Pologne','Portugal','Qatar','République centrafricaine','République démocratique du Congo','République Dominicaine','République du Congo','République tchèque','Roumanie','Royaume-Uni','Russie','Rwanda','Saint-Kitts-et-Nevis','Saint-Vincent-et-les-Grenadines','Sainte-Lucie','Saint-Marin','Salomon','Salvador','Samoa','São Tomé-et-Principe','Sénégal','Serbie','Seychelles','Sierra Leone','Singapour','Slovaquie','Slovénie','Somalie','Soudan','Soudan du Sud','Sri Lanka','Suède','Suisse','Suriname','Syrie','Tadjikistan','Tanzanie','Tchad','Thaïlande','Timor oriental','Togo','Tonga','Trinité-et-Tobago','Tunisie','Turkménistan','Turquie','Tuvalu','Ukraine','Uruguay','Vanuatu','Vatican','Venezuela','Viêt Nam','Yémen','Zambie','Zimbabwe'];
                           foreach ($countries as $country){
@@ -113,13 +113,11 @@
                   <div class="col-md-3">
                     <div class="form-group">
                       <select name="choice" id="inputchoice" size="1" class="form-control">
-                        <option selected>Select a choice</option>
+                        <option selected><?= isset($_SESSION['inputs']['choice']) ? $_SESSION['inputs']['choice'] : 'Select a choice'; ?></option>
                         <?php
                           $choices=['Information', 'Claim', 'Other'];
-                          $i=0;
                           foreach ($choices as $choice){
-                              $i=$i+1;
-                              echo '<option value='.$i.'>'.$choice.'</option>';
+                              echo '<option value='.$choice.'>'.$choice.'</option>';
                           }
                         ?>
                       </select>
