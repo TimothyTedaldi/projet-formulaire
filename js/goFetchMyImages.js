@@ -4,8 +4,10 @@ const database = [{"name":"Raspberry Pi 4 Model B",
 let i = 1;
 database.forEach(element => {
     document.getElementById('TTimg' + i).src = element.image;
+    document.getElementById('TTimg' + i).alt = "picture of a " + element.name;
     document.getElementById('TTtitle' + i).textContent = element.name;
     document.getElementById('TTdescription' + i).textContent = element.description;
+    
     i ++;
 });
 

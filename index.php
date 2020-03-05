@@ -1,3 +1,7 @@
+<?php
+  define('CSSPATH', 'assets/css/'); //define css path
+  $cssItem = 'style.css'; //css item to display
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -10,7 +14,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
-        <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="<?php echo (CSSPATH . "$cssItem"); ?>">
 
         <title>Hacker Poulette</title>
     </head>
@@ -26,7 +30,7 @@
           <!-- END Bootstrap-Cookie-Alert -->  
           <!-- NAVBAR -->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <img class="navbar-brand TTlogo" src="assets/img/hackerpouletteLogo.png" href="#" alt="HackerPoulette's logo">
+                <img class="navbar-brand TTlogo" src="assets/img/hackerpouletteLogo.png" href="#">
                 </img>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -72,7 +76,7 @@
           <h3 class="col-12 text-center"> Completely upgraded, re-engineered </h3>
           <h3 class="col-12 text-center"> Faster, more powerful </h3>
           <div class="col-0 col-lg-1"></div>
-          <img alt="picture of Product of the month" class="col-12 col-lg-5" src="/assets/img/raspberry.PNG">
+          <img class="col-12 col-lg-5" src="/assets/img/raspberry.PNG">
           <div class="col-12 col-lg-5 mt-4 ml-md-3 row">
               <h4 class="font-weight-bold my-auto ml-3 mr-5"> From 35 $ </h4>
               <a class="btn btn-primary TTdetails ml-5 my-auto" href="#" onclick="lightbox_open();">More Details</a>
@@ -111,7 +115,8 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="card mb-2">
-                      <img class="card-img-top" id="TTimg1"  src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
+                      <img class="card-img-top" id="TTimg1"  src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg"
+                        alt="Card image cap">
                       <div class="card-body">
                         <h4 class="card-title" id="TTtitle1">Card title</h4>
                         <p class="card-text" id="TTdescription1">Some quick example text to build on the card title and make up the bulk of the
@@ -123,7 +128,8 @@
       
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <img class="card-img-top" id="TTimg2" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
+                      <img class="card-img-top" id="TTimg2" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg"
+                        alt="Card image cap">
                       <div class="card-body">
                         <h4 class="card-title" id="TTtitle2">Card title</h4>
                         <p class="card-text" id="TTdescription2">Some quick example text to build on the card title and make up the bulk of the
@@ -135,7 +141,8 @@
       
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <img class="card-img-top" id="TTimg3" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
+                      <img class="card-img-top" id="TTimg3" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg"
+                        alt="Card image cap">
                       <div class="card-body">
                         <h4 class="card-title" id="TTtitle3">Card title</h4>
                         <p class="card-text" id="TTdescription3">Some quick example text to build on the card title and make up the bulk of the
@@ -155,7 +162,8 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="card mb-2">
-                      <img class="card-img-top" id="TTimg4" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg" alt="Card image cap">
+                      <img class="card-img-top" id="TTimg4" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
+                        alt="Card image cap">
                       <div class="card-body">
                         <h4 class="card-title" id="TTtitle4">Card title</h4>
                         <p class="card-text" id="TTdescription4">Some quick example text to build on the card title and make up the bulk of the
@@ -167,7 +175,8 @@
       
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <img class="card-img-top" id="TTimg5" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg" alt="Card image cap">
+                      <img class="card-img-top" id="TTimg5" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
+                        alt="Card image cap">
                       <div class="card-body">
                         <h4 class="card-title" id="TTtitle5">Card title</h4>
                         <p class="card-text" id="TTdescription5">Some quick example text to build on the card title and make up the bulk of the
@@ -179,7 +188,8 @@
       
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <img class="card-img-top" id="TTimg6" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg" alt="Card image cap">
+                      <img class="card-img-top" id="TTimg6" src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
+                        alt="Card image cap">
                       <div class="card-body">
                         <h4 class="card-title" id="TTtitle6">Card title</h4>
                         <p class="card-text" id="TTdescription6">Some quick example text to build on the card title and make up the bulk of the
@@ -199,7 +209,8 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="card mb-2">
-                      <img class="card-img-top" id="TTimg7" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg" alt="Card image cap">
+                      <img class="card-img-top" id="TTimg7" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(53).jpg"
+                        alt="Card image cap">
                       <div class="card-body">
                         <h4 class="card-title" id="TTtitle7">Card title</h4>
                         <p class="card-text" id="TTdescription7">Some quick example text to build on the card title and make up the bulk of the
@@ -211,7 +222,8 @@
       
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <img class="card-img-top" id="TTimg8" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg" alt="Card image cap">
+                      <img class="card-img-top" id="TTimg8" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(45).jpg"
+                        alt="Card image cap">
                       <div class="card-body">
                         <h4 class="card-title" id="TTtitle8">Card title</h4>
                         <p class="card-text" id="TTdescription8">Some quick example text to build on the card title and make up the bulk of the
@@ -223,7 +235,8 @@
       
                   <div class="col-md-4 clearfix d-none d-md-block">
                     <div class="card mb-2">
-                      <img class="card-img-top" id="TTimg9" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg" alt="Card image cap">
+                      <img class="card-img-top" id="TTimg9" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/4-col/img%20(51).jpg"
+                        alt="Card image cap">
                       <div class="card-body">
                         <h4 class="card-title" id="TTtitle9">Card title</h4>
                         <p class="card-text" id="TTdescription9">Some quick example text to build on the card title and make up the bulk of the
@@ -244,6 +257,21 @@
         </div>
         <!-- BACK TO TOP -->
         <button onclick="topFunction()" id="TTbtnUp" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+        <!-- Contact Form -->
+
+        <form id="myformid" action="/myformaction">
+            <!-- Form here -->
+            <label for="nameaksljf">Your Name</label>
+            <input type="text" id="nameksljf" name="nameksljf" placeholder="Your name here" required maxlength="100">
+            <label for="emaillkjkl">Your E-mail</label>
+            <input type="text" id="emaillkjkl" name="emaillkjkl" placeholder="Your e-mail here" required>
+            <!-- H o n e y p o t  to counter Odille-->
+            <label class="noOdille" for="name"></label>
+            <input class="noOdille" autocomplete="off" type="text" id="name" name="name" placeholder="Your name here">
+            <label class="noOdille" for="email"></label>
+            <input class="noOdille" autocomplete="off" type="email" id="email" name="email" placeholder="Your e-mail here">
+        </form>
 
 
         <!-- VIDEO BOX-->
@@ -304,3 +332,12 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </body>
 </html>
+
+<!-- PHP STARTING HERE -->
+
+<?php
+
+
+
+
+?>
