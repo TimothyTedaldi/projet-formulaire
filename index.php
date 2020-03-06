@@ -76,7 +76,7 @@
           <h3 class="col-12 text-center"> Completely upgraded, re-engineered </h3>
           <h3 class="col-12 text-center"> Faster, more powerful </h3>
           <div class="col-0 col-lg-1"></div>
-          <img class="col-12 col-lg-5" src="/assets/img/raspberry.PNG">
+          <img class="col-12 col-lg-5" src="./assets/img/raspberry.PNG">
           <div class="col-12 col-lg-5 mt-4 ml-md-3 row">
               <h4 class="font-weight-bold my-auto ml-3 mr-5"> From 35 $ </h4>
               <a class="btn btn-primary TTdetails ml-5 my-auto" href="#" onclick="lightbox_open();">More Details</a>
