@@ -1,6 +1,6 @@
 <?php
 //sanatisation
-/*$options = array(
+$options = array(
     'gender' 	    => FILTER_SANITIZE_STRING,
     'countries' 	=> FILTER_SANITIZE_STRING,
     'firstname' 	=> FILTER_SANITIZE_STRING,
@@ -8,7 +8,7 @@
     'email' 		=> FILTER_VALIDATE_EMAIL,
     'choice' 	    => FILTER_SANITIZE_STRING,
     'message' 		=> FILTER_SANITIZE_STRING);
-$result = filter_input_array($_POST, $options);
+$result = filter_input_array(INPUT_POST, $options);
 if ($result != null AND $result != FALSE) {
 	echo "Tous les champs ont été nettoyés !";
 } else {
@@ -21,7 +21,7 @@ foreach($options as $key => $value)
 echo $result['firstname'];
 echo $result['lastname'];
 echo $result['email'];
-echo $result['message'];*/
+echo $result['message'];
 
 $errors=[];
 if(!array_key_exists('firstname',$_POST)|| $_POST['firstname']==''){
@@ -51,7 +51,7 @@ session_start();
 if(!empty($errors)){
     $_SESSION['errors']=$errors;
     $_SESSION['inputs']=$_POST;
-    header('Location: contact.php');
+    header('Location: index.php#TTcontact');
 }
 else{
     $_SESSION['success']=1;
@@ -67,7 +67,7 @@ else{
     $headers .= "Content-Type:text/html;charset=utf-8";
 
     mail('christinesautelet@gmail.com','formulaire de contact',$contenu,$headers, "-f".$email);
-    header('Location: contact.php');
+    header('Location: index.php#TTcontact');
     //$countries."\n"."\n".$gender." ".$firstname." ".$lastname."\n".$email."\n"."\n".$choice."\n"."\n".
 }
 var_dump($errors);

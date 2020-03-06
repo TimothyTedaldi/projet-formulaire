@@ -278,8 +278,11 @@
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="radio" name="gender" value="mr" class="radio-inline" <?php echo 'checked' ?> >Mr
-                      <input type="radio" name="gender" value="mrs" class="radio-inline"<?= $_SESSION['inputs']['gender']=='mrs' ? 'checked' : ''; ?>>Mrs
+                      <input type="radio" name="gender" value="mr" class="radio-inline" 
+                      
+                      <?php if (isset($_SESSION['inputs']['gender'])) {echo $_SESSION['inputs']['gender']=='mr' ? 'checked' : ''; }?> >Mr
+                      <input type="radio" name="gender" value="mrs" class="radio-inline"
+                      <?php if (isset($_SESSION['inputs']['gender'])) {echo $_SESSION['inputs']['gender']=='mrs' ? 'checked' : ''; }?> >Mrs
                     </div>
                   </div>
                   <div class="col-md-8">
@@ -332,6 +335,31 @@
                       <textarea name="message" id="inputmessage" class="form-control"><?= isset($_SESSION['inputs']['message']) ? $_SESSION['inputs']['message'] : ''; ?></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                  <?php
+                  $options = array(
+                    'gender' 	    => FILTER_SANITIZE_STRING,
+                    'countries' 	=> FILTER_SANITIZE_STRING,
+                    'firstname' 	=> FILTER_SANITIZE_STRING,
+                    'lastname' 	  => FILTER_SANITIZE_STRING,
+                    'email' 	    => FILTER_VALIDATE_EMAIL,
+                    'choice' 	    => FILTER_SANITIZE_STRING,
+                    'message' 		=> FILTER_SANITIZE_STRING);
+                $result = filter_input_array(INPUT_POST, $options);
+                if ($result != null AND $result != FALSE) {
+                  echo "Tous les champs ont été nettoyés !";
+                } else {
+                  echo "Un champ est vide ou n'est pas correct!";
+                }
+                foreach($options as $key => $value) 
+                {
+                   $result[$key]=trim($result[$key]);
+                }
+                echo $result['firstname'];
+                echo $result['lastname'];
+                echo $result['email'];
+                echo $result['message'];
+                ?>
+
                   </div>
                 </div>
               </form>
