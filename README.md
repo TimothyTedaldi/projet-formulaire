@@ -16,4 +16,4 @@ Finally, as Christine encountered a lot of difficulties, Timothy took care of fi
 
 ## Work Statut
 
-The work is still in progress and need a bit of cleaning to be good
+The work is still in progress and need a bit of cleaning to be good. We still need to work on the "Send mail" part !
