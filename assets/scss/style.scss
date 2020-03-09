@@ -5,33 +5,17 @@ $secondcolor:#FFF;
 $thirdcolor: #303030;
 
 // SETTING DEFAULT FONT FAMILY
-@font-face {
-    font-family: regularFont;
-    src: url(assets\font\Bellota-Regular.otf);
-}
-@font-face {
-    font-family: boldFont;
-    src: url(assets\font\Bellota-Bold.otf);
-}
-@font-face {
-    font-family: italicFont;
-    src: url(assets\font\Bellota-Italic.otf);
-}
 
 
 p, h1, h2, h3, h4, button, a {
-    font-family: regularFont !important;
+    font-family: 'bellotaregular' !important;
 }
-.font-weight-bold{
-    font-family: boldFont !important;
-}
-.font-italic{
-    font-family: italicFont !important;
-}
+
 
 // CSS HERE
 
 body{
+    font-family: 'bellotaregular' !important;
     background-color: $secondcolor;
     header{
         text-align: center;
@@ -118,17 +102,6 @@ body{
         }
         &:hover {
             background-color: rgba(128, 128, 255, 0.329);
-        }
-    }
-    .contact{
-        .noOdille{
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 0;
-            width: 0;
-            z-index: -1;
         }
     }
     .footer-bg{

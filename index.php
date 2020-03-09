@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+        <link rel="stylesheet" href="assets\font\bellota\web fonts\bellota_regular_macroman\stylesheet.css">
         <link rel="stylesheet" type="text/css" href="<?php echo (CSSPATH . "$cssStyle"); ?>">
 
         <title>Hacker Poulette</title>
@@ -271,15 +272,21 @@
               <?php endif;?>
               <?php if(array_key_exists('success',$_SESSION)):?>
                 <div class="alert alert-success">
-                Your email has been sent
+                  Your email has been sent
                 </div>
               <?php endif;?>
-              <form action="post_contact.php" method="POST">
+              <form action="post_contact.php" method="POST" id="TTform">
+                <!-- START OF HONEYPOT -->
+                <input name="name" type="text" class="counterOdille d-none" id="name" autocomplete="off">
+                <!-- END OF HONEYPOT-->
                 <div class="row">
                   <div class="col-md-4">
                     <div class="form-group">
-                      <input type="radio" name="gender" value="mr" class="radio-inline" <?php echo 'checked' ?> >Mr
-                      <input type="radio" name="gender" value="mrs" class="radio-inline"<?= $_SESSION['inputs']['gender']=='mrs' ? 'checked' : ''; ?>>Mrs
+                      <label for="Gender">Gender :</label>
+                      <input type="radio" name="gender" value="mr" class="radio-inline" 
+                      <?php if (isset($_SESSION['inputs']['gender'])) {echo $_SESSION['inputs']['gender']=='mr' ? 'checked' : ''; }?> >Mr
+                      <input type="radio" name="gender" value="mrs" class="radio-inline"
+                      <?php if (isset($_SESSION['inputs']['gender'])) {echo $_SESSION['inputs']['gender']=='mrs' ? 'checked' : ''; }?> >Mrs
                     </div>
                   </div>
                   <div class="col-md-8">
@@ -296,31 +303,31 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <div class="form-group">
+                    <div class="form-group" id="TTformfirstname">
                       <label for="inputfirstname">Firstname</label>
-                      <input type="text" name="firstname" class="form-control" id="inputfirstname" value="<?= isset($_SESSION['inputs']['firstname']) ? $_SESSION['inputs']['firstname'] : ''; ?>">
+                      <input type="text" name="firstname" class="form-control input-field" required id="inputfirstname"  value="<?= isset($_SESSION['inputs']['firstname']) ? $_SESSION['inputs']['firstname'] : ''; ?>"  onkeyup="validate('inputfirstname');">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="inputlastname">Lastname</label>
-                      <input type="text" name="lastname" class="form-control" id="inputlastname" value="<?= isset($_SESSION['inputs']['lastname']) ? $_SESSION['inputs']['lastname'] : ''; ?>">
+                      <input type="text" name="lastname" class="form-control" required id="inputlastname" value="<?= isset($_SESSION['inputs']['lastname']) ? $_SESSION['inputs']['lastname'] : ''; ?>"  onkeyup="validate('inputlastname');">
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
                       <label for="email">Email</label>
-                      <input type="email" name="email" class="form-control" id="email" value="<?= isset($_SESSION['inputs']['email']) ? $_SESSION['inputs']['email'] : ''; ?>">
+                      <input type="email" name="email" required class="form-control" id="email" value="<?= isset($_SESSION['inputs']['email']) ? $_SESSION['inputs']['email'] : ''; ?>" onkeyup="validate('email');">
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
-                      <select name="choice" id="inputchoice" size="1" class="form-control">
-                        <option selected><?= isset($_SESSION['inputs']['choice']) ? $_SESSION['inputs']['choice'] : 'Select a choice'; ?></option>
+                      <select name="subject" id="inputsubject" size="1" class="form-control">
+                        <option selected><?= isset($_SESSION['inputs']['subject']) ? $_SESSION['inputs']['subject'] : 'Select a subject'; ?></option>
                         <?php
-                          $choices=['Information', 'Claim', 'Other'];
-                          foreach ($choices as $choice){
-                              echo '<option value='.$choice.'>'.$choice.'</option>';
+                          $subjects=['Information', 'Claim', 'Other'];
+                          foreach ($subjects as $subject){
+                              echo '<option value='.$subject.'>'.$subject.'</option>';
                           }
                         ?>
                       </select>
@@ -329,9 +336,9 @@
                   <div class="col-md-12">
                     <div class="form-group">
                       <label for="inputmessage">Message</label>
-                      <textarea name="message" id="inputmessage" class="form-control"><?= isset($_SESSION['inputs']['message']) ? $_SESSION['inputs']['message'] : ''; ?></textarea>
+                      <textarea name="message"  id="inputmessage" required class="form-control" onkeyup="validate('inputmessage');"><?= isset($_SESSION['inputs']['message']) ? $_SESSION['inputs']['message'] : ''; ?></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" id="run" class="btn btn-primary TTdetails mb-5">Submit</button>
                   </div>
                 </div>
               </form>
@@ -385,10 +392,12 @@
   
 
         <!-- SCRIPT HERE -->
-
+        <script src="js/specialsCharacterDenied.js"></script>
+        <script src="js/validateForm.js"></script>
         <script src="js/openVideo.js"></script>
         <script src="js/backToTop.js"></script>
         <script src="js/goFetchMyImages.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -404,105 +413,4 @@ unset($_SESSION['inputs']);
 unset($_SESSION['success']);
 unset($_SESSION['errors']);
 ?>
-
-<?php
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-<!-- Contact Form -->
-<h2 class="display-4 TTheading mt-5" id="TTcontact">Contact Us</h2>
-        
-        <div class="contact text-center mt-3 container-fluid mb-5 border-dark border">
-          <form>
-            <div class="form-row">
-              <!-- H o n e y p o t  to counter Odille-->
-              <label class="noOdille" for="name"></label>
-              <input class="noOdille" autocomplete="off" type="text" id="name" name="name" placeholder="Welcome Odille">
-              <!-- REAL FORM -->
-              
-              <div class="col-md-5 mb-2 ml-3">
-                <label for="validationServer01"></label>
-                <input type="text" class="form-control is-valid" id="validationServer01" placeholder="First name" value="Enter First Name" required>
-                <div class="valid-feedback">
-                  Looks good!
-                </div>
-              </div>
-              <div class="col-1"></div>
-              <div class="col-md-5 mb-2">
-                <label for="validationServer02"></label>
-                <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Last name" value="Enter Last Name" required>
-                <div class="invalid-feedback">
-                  Looks good!
-                </div>
-              </div>
-            </div>
-            <div class="col-md-5 mb-2">
-              <label class="my-1 mr-2" for="inlineFormCustomSelectPref"></label>
-              <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                <option selected>Select your country</option>
-                <option value="1">Belgium</option>
-                <option value="2">France</option>
-                <option value="3">Germany</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <div class="col-md-6 mb-3">
-                <label for="validationServer03">City</label>
-                <input type="text" class="form-control is-invalid" id="validationServer03" placeholder="City" required>
-                <div class="invalid-feedback">
-                  Please provide a valid city.
-                </div>
-              </div>
-              <div class="col-md-3 mb-3">
-                <label for="validationServer04">State</label>
-                <input type="text" class="form-control is-invalid" id="validationServer04" placeholder="State" required>
-                <div class="invalid-feedback">
-                  Please provide a valid state.
-                </div>
-              </div>
-              <div class="col-md-3 mb-3 border">
-                <label for="validationServer05">Zip</label>
-                <input type="text" class="form-control is-invalid" id="validationServer05" placeholder="Zip" required>
-                <div class="invalid-feedback">
-                  Please provide a valid zip.
-                </div>
-              </div>
-            </div>
-            <div class="col-3">
-              <button class="btn btn-primary" type="submit">Submit form</button>
-            </div>
-            
-          </form>
-        </div>
-
-*/
-?>
-
+<?php 
